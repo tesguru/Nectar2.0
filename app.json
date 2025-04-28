@@ -4,7 +4,7 @@
     "slug": "Nectar2.0",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/splash-icon-1.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/splash-icon-1.png",
         "backgroundColor": "#ffffff"
       }
     },
@@ -22,15 +22,24 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
+    "splash": {
+      "image": "./assets/images/splash-icon-1.png",  
+      "resizeMode": "contain", 
+      "backgroundColor": "#53B175"  
+    },
     "plugins": [
       "expo-router",
       [
-        "expo-splash-screen",
+        "expo-font",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "fonts": [
+            "./assets/fonts/Gilroy-Bold.ttf",
+            "./assets/fonts/Gilroy-ExtraBold.ttf",
+            "./assets/fonts/Gilroy-Light.ttf",
+            "./assets/fonts/Gilroy-Medium.ttf",
+            "./assets/fonts/Gilroy-Regular.ttf",
+            "./assets/fonts/Gilroy-SemiBold.ttf"
+          ]
         }
       ]
     ],

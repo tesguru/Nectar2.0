@@ -1,39 +1,49 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import { Stack } from "expo-router";
+import "./global.css";
+import * as SplashScreen from "expo-splash-screen";
+import { useFonts } from "expo-font";
+import { useEffect } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Toast from "react-native-toast-message";
+import { LogBox } from "react-native";
+import { StatusBar } from "expo-status-bar"; // Import StatusBar
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+// LogBox.ignoreAllLogs(true); // Hide logs in UI
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+// const originalConsoleWarn = console.warn;
+// console.warn = (...args) => {
+//   console.log("⚠️ LOG:", ...args); // Show logs in terminal
+//   originalConsoleWarn(...args);
+// };
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+  const [fontsLoaded] = useFonts({
+    "Gilroy-Bold": require("../assets/fonts/Gilroy-Bold.ttf"),
+    "Gilroy-ExtraBold": require("../assets/fonts/Gilroy-ExtraBold.otf"),
+    "Gilroy-Light": require("../assets/fonts/Gilroy-Light.ttf"),
+    "Gilroy-Medium": require("../assets/fonts/Gilroy-Medium.ttf"),
+    "Gilroy-Regular": require("../assets/fonts/Gilroy-Regular.ttf"),
+    "Gilroy-SemiBold": require("../assets/fonts/Gilroy-SemiBold.ttf"),
   });
-
+  const queryClient = new QueryClient();
   useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
+    async function prepare() {
+      // Prevent hiding before fonts load
+      if (fontsLoaded) {
+        await SplashScreen.hideAsync(); // Hide when fonts are ready
+      }
     }
-  }, [loaded]);
+    prepare();
+  }, [fontsLoaded]);
 
-  if (!loaded) {
-    return null;
-  }
+  if (!fontsLoaded) return null;
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <>
+      <QueryClientProvider client={queryClient}>
+        <Stack screenOptions={{ headerShown: false }} />
+        <Toast />
+      </QueryClientProvider>
+    </>
   );
 }

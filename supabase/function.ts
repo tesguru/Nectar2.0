@@ -1,0 +1,4 @@
+
+export const EXPO_PUBLIC_SUPABASE_URL=https://ovpciyzdwoccrzyhnftc.supabase.com;
+expoXPO_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im92cGNpeXpkd29jY3J6eWhuZnRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIwNzkxOTEsImV4cCI6MjA1NzY1NTE5MX0.jrirKHp2k0ZeYqbuh1i9HvzKm-H4oyHzkK4ue0G0dII;
+        
