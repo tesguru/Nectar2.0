@@ -24,12 +24,12 @@ export const BannerData = [
 
 export const products = [
     {
-      id: "1", // Ensure it's a string
+      id: "1", 
       productname: "Apple",
       details: "7kg per bag",
       price: "7.99",
       image: image.apple, 
-      description:"Apple are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet."// Use direct import
+      description:"Apple are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet."
     },
     {
       id: "2",

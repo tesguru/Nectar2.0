@@ -31,7 +31,7 @@ const Form: React.FC<FormInputs> = ({
               keyboardType={keyboardType}
               value={value}
               secureTextEntry={securetextentry}
-              onChangeText={onChange} // Use the field-provided onChange
+              onChangeText={onChange} 
               className="flex-row items-center justify-between py-2 border-b border-gray-300"
             />
             {error && <Text className="text-red-400">{error.message}</Text>}
