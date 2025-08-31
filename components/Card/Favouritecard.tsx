@@ -7,7 +7,7 @@ type FavouriteCardProps = {
   subtitle: string;
   price: number | string;
   imageSrc: ImageSourcePropType;
-  onPress?: () => void; // optional if you want card to be clickable later
+  onPress?: () => void; 
 };
 
 const FavouriteCard: React.FC<FavouriteCardProps> = ({

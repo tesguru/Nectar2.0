@@ -6,11 +6,11 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import React from "react";
-import { ImageSourcePropType } from "react-native"; // Import correct type for images
+import { ImageSourcePropType } from "react-native"; 
 import { Button } from "react-native";
 import { router } from "expo-router";
 
-// Define the product input type
+
 interface ProductInputs {
   product: {
     id: string;

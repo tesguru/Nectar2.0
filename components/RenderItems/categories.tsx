@@ -1,12 +1,12 @@
 import { View, Text, Image, ImageSourcePropType } from "react-native";
 import React from "react";
 
-// Define the interface for a single category
+
 interface CategoryProps {
   category: {
     id: string;
     categoryname: string;
-    image: ImageSourcePropType; // Ensure image type is correctly set
+    image: ImageSourcePropType; 
     bgcolor: string;
   };
 }

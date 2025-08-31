@@ -1,4 +1,4 @@
-import { LoginFormData, SignUpFormData, SignUpFormSchema } from "../types/index";
+import { LoginFormData, SignUpFormData} from "../types/index";
 import { supabase } from "@/supabase/supabase";
 
 // Login User Data
@@ -12,11 +12,11 @@ export const loginData = async (userdata: LoginFormData) => {
   console.log("Response from Supabase:", { data, error });
 
   if (error) {
-    throw new Error(error.message); // Ensure it's a string
+    throw new Error(error.message); 
   }
 
   if (!data || data.length === 0) {
-    throw new Error("Incorrect email or password."); // Throw an Error object
+    throw new Error("Incorrect email or password."); 
   }
 
   return { data: data[0], error: null };

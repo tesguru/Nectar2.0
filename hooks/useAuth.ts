@@ -1,4 +1,4 @@
-// hooks/useAuth.ts
+
 import { router } from "expo-router";
 import { useMutation } from "@tanstack/react-query";
 import { loginData, createUser } from "@/api/apiservices";
@@ -22,7 +22,7 @@ export const useAuth = () => {
     },
   });
 
-  /** ---------------- SIGNUP ---------------- */
+
   const signUpMutation = useMutation({
     mutationFn: (formData: SignUpFormData) => createUser(formData),
     onSuccess: (response) => {
@@ -37,11 +37,11 @@ export const useAuth = () => {
   });
 
   return {
-    // Login
+
     login: loginMutation.mutate,
     isLoggingIn: loginMutation.isPending,
 
-    // Sign Up
+ 
     signUp: signUpMutation.mutate,
     isSigningUp: signUpMutation.isPending,
   };
