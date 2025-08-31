@@ -6,7 +6,7 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import React, { useState } from "react";
-import { useLocalSearchParams } from "expo-router";
+import { Link, useLocalSearchParams } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import { products } from "@/constants/data";
@@ -22,7 +22,12 @@ const id = () => {
       <View className="px-4">
         <View className="bg-[#f3f7f3]  rounded-b-xl">
           <View className="flex-row justify-between pt-4">
-            <Feather name="chevron-left" size={28} color="black" />
+           <TouchableOpacity className="">
+                              <Link href={"/(root)/tabs/Explore"} replace>
+                                <Feather name="chevron-left" size={30} color="black" />
+                              </Link>
+                          
+                          </TouchableOpacity>
             <Feather name="download" size={28} color="black" />
           </View>
           <View className="">
@@ -33,7 +38,7 @@ const id = () => {
           <View className="flex-row justify-between">
             <View className="">
               <Text className="text-2xl font-giloy-extrabold">
-                Natural Red app
+                {productDetails?.productname}
               </Text>
               <Text className="font-gilroy-light">1kg. Price</Text>
             </View>

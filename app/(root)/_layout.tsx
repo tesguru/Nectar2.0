@@ -21,8 +21,8 @@ const TabLayout = () => {
           width: 24,
           height: 24,
           tintColor: focused ? "#53B175" : "black",
-          opacity: focused ? 1 : 0.8, // Slight fade effect
-          transform: [{ scale: focused ? 1.1 : 1 }], // Scale effect when focused
+          opacity: focused ? 1 : 0.8, 
+          transform: [{ scale: focused ? 1.1 : 1 }],
         }}
       />
 
@@ -69,16 +69,7 @@ const TabLayout = () => {
           ),
         }}
       />
-      <Tabs.Screen
-        name="tabs/Cart"
-        options={{
-          title: "Cart",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={image.Cart} title="Cart" />
-          ),
-        }}
-      />
+     
       <Tabs.Screen
         name="tabs/Favourite"
         options={{

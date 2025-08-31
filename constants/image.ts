@@ -27,6 +27,12 @@ import Meatandfinish from "@/assets/images/pngfuel 9.png";
 import DairyandFishes from "@/assets/images/pngfuel.png";
 import BakeryandSnacks from "@/assets/images/pngfuel 6 (1).png";
 import CookingOilandGhee from "@/assets/images/Group 6835.png";
+import SpriteBottle from "@/assets/images/spritebottle.png";
+import roundedAvatar from "@/assets/images/rounded-avatar.png";
+import coke from  "@/assets/images/coke.png"
+import cocacola from  "@/assets/images/cocacola.png"
+import appleandjuice from  "@/assets/images/applejuice.png"
+import pepsi from  "@/assets/images/pepsi.png"
 export default{
     logo,
     manlogo,
@@ -56,6 +62,11 @@ export default{
    DairyandFishes,
    BakeryandSnacks,
    CookingOilandGhee,
-   FreshandFruits
-
+   FreshandFruits,
+   SpriteBottle,
+   roundedAvatar,
+   coke,
+   cocacola,
+   pepsi,
+   appleandjuice
 }
